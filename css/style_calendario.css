@@ -1,0 +1,186 @@
+:root {
+  --accent: #E2457C;
+  --text-dark: #222;
+  --text-light: #fff;
+  --bg: #FCFFFC;
+  --border: #ddd;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  margin: 0;
+  color: var(--text-dark);
+}
+
+/* HEADER */
+header {
+  background-color: var(--accent);
+  color: var(--text-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+  height: 50px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+  color: #ffd6e4;
+}
+
+/* CALENDAR SECTION */
+.calendar-section {
+  max-width: 900px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.calendar-section h1 {
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.calendar-container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-header button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  text-align: center;
+}
+
+.calendar-grid div {
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.calendar-grid div:hover {
+  background-color: #f9e1ea;
+}
+
+.calendar-grid .today {
+  background-color: var(--accent);
+  color: white;
+}
+
+.calendar-grid .event-day {
+  border: 2px solid var(--accent);
+  background-color: #ffe1eb;
+  font-weight: bold;
+  position: relative;
+}
+
+.calendar-grid .event-day::after {
+  content: "•";
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: var(--accent);
+  font-size: 18px;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.close {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--accent);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #f5f5f5;
+  margin-top: 40px;
+}
+
+
+.event-box {
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #fff0f5;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.event-box h3 {
+  margin: 0 0 5px 0;
+  font-size: 20px;
+  color: var(--accent);
+}
+
+.event-box p {
+  margin: 3px 0;
+  font-size: 16px;
+  color: var(--text-dark);
+}
