@@ -1,0 +1,12 @@
+:root {
+    --rotaract-pink: #E2457C;
+    --dark: #040F0F;
+    --white: #FCFFFC;
+    --light-gray: #F4F4F4;
+}
+
+h1{
+    font-family: "Poppins", sans-serif;
+    color: var(--rotaract-pink);
+    font-size: 2rem;
+}
