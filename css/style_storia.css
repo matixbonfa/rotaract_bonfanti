@@ -10,6 +10,7 @@
     --muted: #6b6b76;
     --white: #ffffff;
     --card-shadow: 0 6px 18px rgba(21,21,30,0.08);
+    --line-blue: #007bff;
 }
 
 /* HERO */
@@ -54,129 +55,121 @@
     letter-spacing: .4px;
 }
 
-/* Toolbar small legend */
-.timeline-toolbar {
-    display:flex;
-    justify-content:center;
-    margin-bottom:14px;
-}
-.timeline-toolbar .legend {
-    color:var(--muted);
-    font-size:0.95rem;
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-.timeline-toolbar .dot{
-    width:12px;
-    height:12px;
-    background:linear-gradient(135deg,var(--rotaract-pink),#ff6b9a);
-    border-radius:50%;
-    box-shadow: 0 2px 6px rgba(216,27,96,0.22);
+/* Timeline Table - Serpentina */
+#divLineaTempo {
+    width: 80%;
+    margin: 0 auto;
 }
 
-/* TIMELINE HORIZONTAL COMPACT GRID */
-.timeline-horizontal.compact{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap:12px 14px;
-    align-items:start;
-    position:relative;
-    padding: 18px;
+#tabTempo {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-/* thin connector lines between rows */
-.timeline-horizontal.compact::before{
-    content:'';
-    position:absolute;
-    left:6%;
-    right:6%;
-    top:28px;
-    height:3px;
-    background:rgba(216,27,96,0.08);
-    z-index:0;
+.rigaTempo td {
+    border-top: solid 4px var(--line-blue); /* linea più spessa */
+    height: 100px;
+    min-width: 30px;
+    position: relative;
+    padding: 0px;
 }
 
-/* ITEM CARD */
-.timeline-item{
-    position:relative;
-    background:var(--light-gray);
-    border-radius:10px;
-    padding:10px 12px;
-    text-align:center;
-    font-size:0.88rem;
-    box-shadow: var(--card-shadow);
-    z-index:1;
-    transition: transform .28s ease, background .28s ease, color .28s ease;
-    display:flex;
-    flex-direction:column;
-    gap:6px;
-    min-height:64px;
-    justify-content:center;
+.rigaTempo td:first-child {
+    border-left: none;
 }
 
-/* dot marker */
-.timeline-item::after{
-    content:'';
-    position:absolute;
-    top:-8px;
-    left:50%;
-    transform:translateX(-50%);
-    width:14px;
-    height:14px;
-    background:var(--white);
-    border:3px solid var(--rotaract-pink);
-    border-radius:50%;
-    box-shadow:0 3px 8px rgba(0,0,0,0.08);
+.rigaTempo td:last-child {
+    border-right: none;
 }
 
-/* year and name styling */
-.timeline-item .year{
-    font-weight:700;
-    color:var(--muted);
-    font-size:0.85rem;
-}
-.timeline-item .pres{
-    font-weight:600;
-    color:#222;
-    font-size:0.95rem;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
+/* Linee verticali serpentina */
+.rigaTempo:nth-child(odd) td:last-child {
+    border-right: solid 4px var(--line-blue);
 }
 
-/* Hover emphasis */
-.timeline-item:hover{
-    transform: translateY(-6px);
+.rigaTempo:nth-child(even) td:first-child {
+    border-left: solid 4px var(--line-blue);
+}
+
+/* Pallini */
+.rigaTempo td::before {
+    content: '';
+    display: block;
+    width: 16px; 
+    height: 16px; 
+    background-color: var(--line-blue); 
+    border-radius: 50%;
+    position: absolute;
+    top: 0%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rigaTempo td:first-child::before {
+    display: none;
+}
+
+/* Item styling */
+.rigaTempo td span.year {
+    display: block;
+    font-weight: 700;
+    color: var(--muted);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.rigaTempo td span.pres {
+    display: block;
+    font-weight: 600;
+    color: #222;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+/* Hover effect */
+.rigaTempo td:hover {
     background: linear-gradient(180deg, rgba(216,27,96,0.95), #ff6b9a);
-    color:var(--white);
+    color: #fff;
+    transform: translateY(-6px);
 }
-.timeline-item:hover .year{ color:rgba(255,255,255,0.9); }
-.timeline-item:hover .pres{ color:#fff; }
+
+.rigaTempo td:hover span.year {
+    color: rgba(255,255,255,0.9);
+}
+
+.rigaTempo td:hover span.pres {
+    color: #fff;
+}
 
 /* responsive tweaks */
 @media (max-width: 980px){
-    .timeline-horizontal.compact{
-        grid-template-columns: repeat(2, 1fr);
-        padding: 12px;
-    }
-    .timeline-horizontal.compact::before{
-        left:4%;
-        right:4%;
-        top:26px;
+    .rigaTempo td {
+        height: 120px;
     }
 }
 
 @media (max-width: 560px){
-    .timeline-horizontal.compact{
-        grid-template-columns: 1fr;
-        gap:10px;
+    #tabTempo {
+        display: block;
     }
-    .timeline-horizontal.compact::before{
-        display:none;
+    .rigaTempo {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
     }
-    .timeline-item .pres{
-        white-space:normal;
+    .rigaTempo td {
+        border-left: none;
+        border-right: none;
+        border-top: solid 3px var(--line-blue);
+        height: auto;
+        padding: 12px 0;
+    }
+    .rigaTempo td::before {
+        left: 20px;
+    }
+    .rigaTempo td span.pres {
+        white-space: normal;
     }
 }
 
