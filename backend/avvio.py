@@ -9,7 +9,7 @@ import os
 BACKEND_DIR = "backend" 
 INIT_SCRIPT = os.path.join(BACKEND_DIR, "init_db.py")
 APP_SCRIPT = os.path.join(BACKEND_DIR, "app.py")
-SYNC_SCRIPT = os.path.join(BACKEND_DIR, "sync_calendar.py")
+SYNC_SCRIPT = os.path.join(BACKEND_DIR, "update_calendar.py")
 
 # Usa lo stesso interprete Python (es. quello del venv)
 PYTHON_EXECUTABLE = sys.executable
