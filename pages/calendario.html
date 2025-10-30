@@ -6,24 +6,28 @@
   <title>Calendario - Rotaract Trento</title>
   <link rel="stylesheet" href="../css/style_calendario.css">
   <script defer src="../javascript/javascript_calendario.js"></script>
+  <link rel="icon" type="image/png" href="../media/homepage/logo.png">
 </head>
-<body>
 
+<body>
   <!-- HEADER / NAVBAR -->
-  <header>
+  <header class="navbar">
     <div class="logo">
-      <img src="../media/homepage/logo.png" alt="Logo Rotaract Trento">
-      <span>Rotaract Trento</span>
+      <img src="../media/homepage/logo.png" alt="Rotaract Trento Logo">
+      <h1>Rotaract Trento</h1>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="chi_siamo.html">Chi siamo</a></li>
-        <li><a href="storia.html">Storia</a></li>
-        <li><a href="calendario.html" class="active">Calendario</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-      </ul>
+
+    <nav class="nav-links" id="main-nav" aria-label="Navigazione principale">
+      <a href="index.html">Home</a>
+      <a href="chi_siamo.html">Chi siamo</a>
+      <a href="storia.html">Storia</a>
+      <a href="calendario.html" class="active">Calendario</a>
+      <a href="contatti.html">Contatti</a>
     </nav>
+
+    <div class="menu-toggle" id="mobile-menu" role="button" aria-controls="main-nav" aria-expanded="false" tabindex="0">
+      &#9776;
+    </div>
   </header>
 
   <!-- MAIN CONTENT -->
@@ -52,6 +56,7 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 Rotaract Club Trento - Tutti i diritti riservati</p>
   </footer>
