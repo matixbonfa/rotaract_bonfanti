@@ -55,7 +55,7 @@ body {
 
 /* .logo img: dimensionamento immagine del logo */
 .logo img {
-    height: 50px; /* altezza fissa per mantenere proporzioni coerenti */
+    height: 135px; /* altezza fissa per mantenere proporzioni coerenti */
     width: auto;  /* larghezza automatica per preservare l'aspect ratio */
 }
 
@@ -241,3 +241,4 @@ body {
     .hero-content h2 {
         font-size: 2rem;             /* dimensione più contenuta su mobile */
     }
+}
