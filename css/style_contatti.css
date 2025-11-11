@@ -1,3 +1,8 @@
+/* =========================
+   ROTARACT TRENTO CONTATTI
+   ========================= */
+
+/* :root - variabili colori */
 :root {
     --rotaract-pink: #E2457C;
     --dark: #040F0F;
@@ -18,10 +23,10 @@ body {
     color: var(--dark);
     background-color: var(--white);
     overflow-x: hidden;
-    padding-top: 80px; /* Spazio per la navbar fissa */
+    padding-top: 80px; /* spazio per navbar fissa */
 }
 
-/* NAVBAR (Codice fornito dall'utente) */
+/* NAVBAR */
 .navbar {
     position: fixed;
     top: 0;
@@ -45,8 +50,14 @@ body {
 }
 
 .logo img {
-    height: 50px;
+    height: 135px; /* come homepage */
     width: auto;
+}
+
+.logo h1 {
+    font-size: 2rem;       /* dimensione simile all'homepage */
+    font-weight: 700;      /* grassetto */
+    color: var(--dark);    /* colore del testo */
 }
 
 .nav-links a {
@@ -62,7 +73,7 @@ body {
     color: var(--rotaract-pink);
 }
 
-/* Mobile menu */
+/* Mobile menu toggle */
 .menu-toggle {
     display: none;
     font-size: 2rem;
@@ -70,15 +81,15 @@ body {
     cursor: pointer;
 }
 
-/* BUTTONS (Codice fornito dall'utente) */
+/* BUTTONS */
 .btn-primary {
     background-color: var(--rotaract-pink);
     color: var(--white);
     padding: 12px 30px;
-    border: none; /* Aggiunto per i form button */
+    border: none;
     border-radius: 25px;
     text-decoration: none;
-    cursor: pointer; /* Aggiunto per i button */
+    cursor: pointer;
     font-size: 1rem;
     transition: background 0.3s;
 }
@@ -87,35 +98,10 @@ body {
     background-color: #c63a6e;
 }
 
-/* FOOTER (Codice fornito dall'utente) */
-.footer {
-    background-color: var(--dark);
-    color: var(--white);
-    text-align: center;
-    padding: 30px 0;
-    font-size: 0.9rem;
-}
-
-.footer .socials {
-    margin-bottom: 15px;
-}
-
-.footer .socials img {
-    height: 25px;
-    width: 25px;
-    margin: 0 10px;
-    filter: brightness(0) invert(1);
-    transition: transform 0.3s;
-}
-
-.footer .socials img:hover {
-    transform: scale(1.1);
-}
-
-/* CONTACT SECTION STYLES */
+/* CONTACT SECTION */
 .contact-section {
     padding: 80px 5%;
-    min-height: calc(100vh - 80px - 100px); /* 100vh - navbar - footer */
+    min-height: calc(100vh - 80px - 100px);
     background-color: var(--light-gray);
 }
 
@@ -140,7 +126,7 @@ body {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* Form 2/3, Info 1/3 */
+    grid-template-columns: 2fr 1fr;
     gap: 40px;
     background-color: var(--white);
     padding: 30px;
@@ -148,7 +134,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-/* CONTACT FORM */
+/* FORM */
 .contact-form-container h3 {
     color: var(--dark);
     margin-bottom: 20px;
@@ -189,12 +175,6 @@ body {
     margin-top: 10px;
 }
 
-.form-status {
-    margin-top: 15px;
-    text-align: center;
-    font-weight: 500;
-}
-
 /* CONTACT INFO */
 .contact-info {
     padding: 20px;
@@ -230,29 +210,32 @@ body {
     line-height: 1.4;
 }
 
-.socials-contact {
-    margin-top: 25px;
+/* FOOTER */
+.footer {
+    background-color: var(--dark);
+    color: var(--white);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9rem;
 }
 
-.socials-contact h4 {
-    color: var(--dark);
-    font-weight: 700;
-    margin-bottom: 10px;
+.footer .socials {
+    margin-bottom: 15px;
 }
 
-.socials-contact img {
-    height: 30px;
-    width: 30px;
-    margin-right: 15px;
+.footer .socials a img {
+    height: 25px;
+    width: 25px;
+    margin: 0 10px;
+    filter: brightness(0) invert(1);
     transition: transform 0.3s;
 }
 
-.socials-contact img:hover {
+.footer .socials a img:hover {
     transform: scale(1.1);
 }
 
-
-/* RESPONSIVE (Codice fornito dall'utente + aggiunte) */
+/* RESPONSIVE */
 @media (max-width: 900px) {
     .nav-links {
         display: none;
@@ -273,13 +256,12 @@ body {
         display: block;
     }
 
-    /* Contact Responsive */
     .contact-grid {
-        grid-template-columns: 1fr; /* Colonna singola per schermi piccoli */
+        grid-template-columns: 1fr;
     }
 
     .contact-form-container {
-        order: 2; /* Sposto il form sotto le info per il mobile */
+        order: 2;
     }
 
     .contact-info {
