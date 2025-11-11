@@ -5,20 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contatti</title>
     <link rel="stylesheet" href="../css/style_contatti.css">
+    <link rel="icon" type="image/png" href="../media/homepage/logo.png">
 </head>
 <body>
 
-    <nav class="navbar">
+    <!-- HEADER / MENU -->
+    <header class="navbar">
         <div class="logo">
-            <img src="logo.png" alt="Logo">
-            <span>Rotaract</span>
+            <img src="../media/homepage/logo.png" alt="Rotaract Trento Logo">
+            <h1>Rotaract Trento</h1>
         </div>
-        <div class="nav-links">
+        <nav class="nav-links" id="main-nav" aria-label="Navigazione principale">
             <a href="index.html">Home</a>
+            <a href="chi_siamo.html">Chi siamo</a>
+            <a href="storia.html">Storia</a>
+            <a href="calendario.html">Calendario</a>
             <a href="contatti.html" class="active">Contatti</a>
+        </nav>
+        <div class="menu-toggle" id="mobile-menu" role="button" aria-controls="main-nav" aria-expanded="false" tabindex="0">
+            &#9776;
         </div>
-    </nav>
+    </header>
 
+    <!-- CONTATTI -->
     <section class="contact-section">
         <div class="container">
             <h2>Contattaci</h2>
@@ -28,26 +37,20 @@
                 <!-- FORM -->
                 <div class="contact-form-container">
                     <h3>Scrivici un messaggio</h3>
-
                     <form class="contact-form" id="contactForm" action="/rotaract_bonfanti/php/send_mail.php" method="POST">
                         <div class="form-group">
                             <label for="name">Nome</label>
                             <input type="text" id="name" name="name" required>
                         </div>
-
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email" required>
                         </div>
-
                         <div class="form-group">
                             <label for="message">Messaggio</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
-
                         <button type="submit" class="btn-primary">Invia</button>
-
-                        
                     </form>
                 </div>
 
@@ -67,22 +70,32 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
+        <p>© 2025 Rotaract Club Trento — Tutti i diritti riservati</p>
         <div class="socials">
-            <img src="facebook.svg" alt="Facebook">
-            <img src="instagram.svg" alt="Instagram">
+            <a href="#" aria-label="Instagram"><img src="../media/homepage/icon_instagram.svg" alt="Instagram"></a>
+            <a href="#" aria-label="Facebook"><img src="../media/homepage/icon_facebook.svg" alt="Facebook"></a>
+            <a href="#" aria-label="Email"><img src="../media/homepage/icon_mail.svg" alt="Email"></a>
         </div>
-        <p>&copy; 2025 Rotaract - Tutti i diritti riservati.</p>
     </footer>
 
     <!-- SCRIPT per resettare il form dopo invio -->
     <script>
-        // Se il form è stato inviato con successo, resetta i campi
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('status') === 'success') {
             const form = document.getElementById('contactForm');
             if (form) form.reset();
         }
+
+        // Toggle menu mobile
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('main-nav');
+        menuToggle.addEventListener('click', () => {
+            const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+            menuToggle.setAttribute('aria-expanded', !expanded);
+            navLinks.classList.toggle('active');
+        });
     </script>
 
 </body>
