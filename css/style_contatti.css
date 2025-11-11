@@ -1,3 +1,8 @@
+/* =========================
+   ROTARACT TRENTO CONTATTI
+   ========================= */
+
+/* :root - variabili colori */
 :root {
     --rotaract-pink: #E2457C;
     --dark: #040F0F;
@@ -18,7 +23,7 @@ body {
     color: var(--dark);
     background-color: var(--white);
     overflow-x: hidden;
-    padding-top: 80px;
+    padding-top: 80px; /* spazio per navbar fissa */
 }
 
 /* NAVBAR */
@@ -45,8 +50,14 @@ body {
 }
 
 .logo img {
-    height: 50px;
+    height: 135px; /* come homepage */
     width: auto;
+}
+
+.logo h1 {
+    font-size: 2rem;       /* dimensione simile all'homepage */
+    font-weight: 700;      /* grassetto */
+    color: var(--dark);    /* colore del testo */
 }
 
 .nav-links a {
@@ -62,6 +73,7 @@ body {
     color: var(--rotaract-pink);
 }
 
+/* Mobile menu toggle */
 .menu-toggle {
     display: none;
     font-size: 2rem;
@@ -84,31 +96,6 @@ body {
 
 .btn-primary:hover {
     background-color: #c63a6e;
-}
-
-/* FOOTER */
-.footer {
-    background-color: var(--dark);
-    color: var(--white);
-    text-align: center;
-    padding: 30px 0;
-    font-size: 0.9rem;
-}
-
-.footer .socials {
-    margin-bottom: 15px;
-}
-
-.footer .socials img {
-    height: 25px;
-    width: 25px;
-    margin: 0 10px;
-    filter: brightness(0) invert(1);
-    transition: transform 0.3s;
-}
-
-.footer .socials img:hover {
-    transform: scale(1.1);
 }
 
 /* CONTACT SECTION */
@@ -188,12 +175,6 @@ body {
     margin-top: 10px;
 }
 
-.form-status {
-    margin-top: 15px;
-    text-align: center;
-    font-weight: 500;
-}
-
 /* CONTACT INFO */
 .contact-info {
     padding: 20px;
@@ -229,24 +210,28 @@ body {
     line-height: 1.4;
 }
 
-.socials-contact {
-    margin-top: 25px;
+/* FOOTER */
+.footer {
+    background-color: var(--dark);
+    color: var(--white);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9rem;
 }
 
-.socials-contact h4 {
-    color: var(--dark);
-    font-weight: 700;
-    margin-bottom: 10px;
+.footer .socials {
+    margin-bottom: 15px;
 }
 
-.socials-contact img {
-    height: 30px;
-    width: 30px;
-    margin-right: 15px;
+.footer .socials a img {
+    height: 25px;
+    width: 25px;
+    margin: 0 10px;
+    filter: brightness(0) invert(1);
     transition: transform 0.3s;
 }
 
-.socials-contact img:hover {
+.footer .socials a img:hover {
     transform: scale(1.1);
 }
 
