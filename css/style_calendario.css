@@ -1,6 +1,8 @@
+@import url('style_home.css');
+
 /* =========================
-   ROTARACT TRENTO - CALENDARIO (VERSIONE MIGLIORATA)
-   ========================= */
+    ROTARACT TRENTO - CALENDARIO (VERSIONE MIGLIORATA)
+    ========================= */
 
 /* VARIABILI GLOBALI */
 :root {
@@ -31,93 +33,20 @@ body {
   flex-direction: column;
 }
 
-/* =========================
-   NAVBAR
-   ========================= */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--white);
-  border-bottom: 2px solid var(--rotaract-pink);
-  padding: 0 5%;
-  z-index: 1000;
-}
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
-.logo img {
-  height: 50px;
-  width: auto;
-}
 
-.logo h1 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--dark);
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--dark);
-  margin: 0 15px;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--rotaract-pink);
-}
-
-/* MENU MOBILE */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  color: var(--rotaract-pink);
-  cursor: pointer;
-}
-
-@media (max-width: 900px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: var(--white);
-    position: absolute;
-    top: 80px;
-    right: 0;
-    width: 100%;
-    border-top: 2px solid var(--rotaract-pink);
-    text-align: center;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
 
 /* =========================
-   MAIN CALENDAR AREA
-   ========================= */
+    MAIN CALENDAR AREA
+    ========================= */
 main {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 100px; /* spazio per la navbar fissa */
+  padding-top: 100px; /* spazio per la navbar fissa (già corretto per 100px) */
   padding-bottom: 40px;
   background-color: #fff;
   min-height: calc(100vh - 120px);
@@ -227,8 +156,8 @@ main {
 }
 
 /* =========================
-   MODAL EVENTI (INGRANDITO)
-   ========================= */
+    MODAL EVENTI (INGRANDITO)
+    ========================= */
 .modal {
   display: none;
   position: fixed;
@@ -284,8 +213,8 @@ main {
 }
 
 /* =========================
-   FOOTER SEMPRE IN FONDO
-   ========================= */
+    FOOTER SEMPRE IN FONDO
+    ========================= */
 footer {
   background-color: var(--dark);
   color: var(--white);

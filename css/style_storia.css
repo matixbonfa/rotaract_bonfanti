@@ -10,7 +10,7 @@
     --muted: #6b6b76;
     --white: #ffffff;
     --card-shadow: 0 6px 18px rgba(21,21,30,0.08);
-    --line-blue: #d81b60;
+    --line-blue: #007bff;
 }
 
 /* HERO */
@@ -67,7 +67,7 @@
 }
 
 .rigaTempo td {
-    border-top: solid 6px var(--line-blue); /* linea più spessa */
+    border-top: solid 4px var(--line-blue); /* linea più spessa */
     height: 100px;
     min-width: 30px;
     position: relative;
@@ -84,14 +84,14 @@
 
 /* Linee verticali serpentina */
 .rigaTempo:nth-child(odd) td:last-child {
-    border-right: solid 6px var(--line-blue);
+    border-right: solid 4px var(--line-blue);
 }
 
 .rigaTempo:nth-child(even) td:first-child {
-    border-left: solid 6px var(--line-blue);
+    border-left: solid 4px var(--line-blue);
 }
 
-/* Pallini 
+/* Pallini */
 .rigaTempo td::before {
     content: '';
     display: block;
@@ -105,12 +105,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-*/
 
 .rigaTempo td:first-child::before {
     display: none;
 }
-
 
 /* Item styling */
 .rigaTempo td span.year {
