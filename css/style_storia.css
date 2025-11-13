@@ -10,7 +10,7 @@
     --muted: #6b6b76;
     --white: #ffffff;
     --card-shadow: 0 6px 18px rgba(21,21,30,0.08);
-    --line-blue: #007bff;
+    --line-pink: #d81b60;
 }
 
 /* HERO */
@@ -67,7 +67,7 @@
 }
 
 .rigaTempo td {
-    border-top: solid 4px var(--line-blue); /* linea più spessa */
+    border-top: solid 4px var(--line-pink); /* linea più spessa */
     height: 100px;
     min-width: 30px;
     position: relative;
@@ -84,31 +84,17 @@
 
 /* Linee verticali serpentina */
 .rigaTempo:nth-child(odd) td:last-child {
-    border-right: solid 4px var(--line-blue);
+    border-right: solid 5px var(--line-pink);
 }
 
 .rigaTempo:nth-child(even) td:first-child {
-    border-left: solid 4px var(--line-blue);
+    border-left: solid 5px var(--line-pink);
 }
 
-/* Pallini */
-.rigaTempo td::before {
-    content: '';
-    display: block;
-    width: 16px; 
-    height: 16px; 
-    background-color: var(--line-blue); 
-    border-radius: 50%;
-    position: absolute;
-    top: 0%;
-    transform: translateY(-50%);
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.rigaTempo td:first-child::before {
+/* Rimuoviamo completamente i pallini */
+/* .rigaTempo td::before {
     display: none;
-}
+} */
 
 /* Item styling */
 .rigaTempo td span.year {
@@ -142,6 +128,11 @@
     color: #fff;
 }
 
+/* Risolvi spazi vuoti con numero dispari di presidenti */
+.rigaTempo td:empty {
+    border-top: none; /* rimuove linea verticale quando la cella è vuota */
+}
+
 /* responsive tweaks */
 @media (max-width: 980px){
     .rigaTempo td {
@@ -161,12 +152,9 @@
     .rigaTempo td {
         border-left: none;
         border-right: none;
-        border-top: solid 3px var(--line-blue);
+        border-top: solid 3px var(--line-pink);
         height: auto;
         padding: 12px 0;
-    }
-    .rigaTempo td::before {
-        left: 20px;
     }
     .rigaTempo td span.pres {
         white-space: normal;
